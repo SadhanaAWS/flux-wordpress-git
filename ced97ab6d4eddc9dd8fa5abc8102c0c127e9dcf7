@@ -1,0 +1,1 @@
+{"jobID":"f531ceb7-fc76-17bd-364e-0463543bbe1d","spec":{"type":"policy","cause":{"Message":"locking to put on hold","User":"sadhana n \u003csadhanna.na@gmail.com\u003e"},"spec":{"default:deployment/w-deploy":{"add":{"locked":"true","locked_msg":"\"locking to put on hold\"","locked_user":"sadhana n \u003csadhanna.na@gmail.com\u003e"},"remove":null}}},"result":null}
