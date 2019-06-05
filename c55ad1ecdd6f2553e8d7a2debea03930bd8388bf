@@ -1,0 +1,1 @@
+{"jobID":"b4b50289-851a-0ffd-8dc6-19c15e837700","spec":{"type":"policy","cause":{"Message":"","User":"sadhana n \u003csadhanna.na@gmail.com\u003e"},"spec":{"default:deployment/w-deploy":{"add":null,"remove":{"automated":"true"}}}},"result":null}
