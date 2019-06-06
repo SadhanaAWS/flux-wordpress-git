@@ -1,0 +1,1 @@
+{"jobID":"a6ff3003-eb35-7395-0393-01a915336789","spec":{"type":"policy","cause":{"Message":"","User":"Sadhana flux2 \u003csadhana.aws2@gmail.com\u003e"},"spec":{"default:deployment/w-deploy":{"add":{"automated":"true"},"remove":null}}},"result":null}
