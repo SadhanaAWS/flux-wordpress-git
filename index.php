@@ -2,10 +2,10 @@
 <html>
 <body>
 
-<h1>WEAVEFLUX - WORDPRESS - CI/CD </h1>
+<h1>WEAVEFLUX - WORDPRESS - CI/CD - Sadhana</h1>
 
 <?php
-echo "New Image!!!";
+echo "New Image!!!"
 ?>
 
 </body>
