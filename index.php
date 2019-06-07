@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>WEAVEFLUX - WORDPRESS</h1>
+<h1>WEAVEFLUX - WORDPRESS - CI/CD </h1>
 
 <?php
 echo "New Image!!!";
