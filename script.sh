@@ -9,3 +9,4 @@ echo "SADHANA"
 #print ${bamboo.buildNumber}
 #TAG=${bamboo.buildNumber}
 #echo ${TAG}
+echo "sadhana"
