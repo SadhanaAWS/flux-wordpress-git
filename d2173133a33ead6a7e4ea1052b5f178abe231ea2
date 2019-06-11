@@ -1,0 +1,1 @@
+{"jobID":"68517741-8763-f47a-4a72-cc0a7283756b","spec":{"type":"policy","cause":{"Message":"","User":"sadhana aws6 \u003csadhana.aws6@gmail.com\u003e"},"spec":{"default:deployment/w-deploy":{"add":null,"remove":{"automated":"true"}}}},"result":null}
