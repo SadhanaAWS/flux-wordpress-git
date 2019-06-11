@@ -51,7 +51,6 @@ metadata:
     app: w-label
   annotations:
     flux.weave.works/automated: 'true'
-    flux.weave.works/tag.wordpress: glob:>70
 spec:
   selector:
     matchLabels:
