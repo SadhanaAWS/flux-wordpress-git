@@ -1,0 +1,1 @@
+{"jobID":"bb7f0ce2-b1f7-04ed-a34c-2142227ce9a5","spec":{"type":"policy","cause":{"Message":"","User":"sadhana aws6 \u003csadhana.aws6@gmail.com\u003e"},"spec":{"default:deployment/w-deploy":{"add":{"tag.wordpress":"glob:\u003e70"},"remove":null}}},"result":null}
