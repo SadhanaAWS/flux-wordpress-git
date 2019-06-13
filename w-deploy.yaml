@@ -1,82 +1,81 @@
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: w-secret
-type: Opaque
-data:
-  username: ZGJ1c2Vy
-  password: ZGJwYXNzd29yZA==
----
 kind: Service
 apiVersion: v1
 metadata:
-  name: w-ext-svc
+  name: wgit-ext-svc
 spec:
   type: ExternalName
   externalName: joe-db.cfgr3xj38ihj.eu-central-1.rds.amazonaws.com
 ---
 apiVersion: v1
-kind: Service
+kind: Secret
 metadata:
-  name: w-svc
-  labels:
-    app: w-label
-spec:
-  ports:
-  - port: 80
-  selector:
-    app: w-label
-    tier: frontend
-  type: LoadBalancer
+  name: wgit-secret
+type: Opaque
+data:
+  username: ZGJ1c2Vy
+  password: ZGJwYXNzd29yZA==
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: w-pvc
+  name: wgit-pvc
   labels:
-    app: w-label
+    app: wgit-label
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wgit-svc
+  labels:
+    app: wgit-label
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: wgit-label
+    tier: frontend
+  type: NodePort
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: w-deploy
+  name: wp-deploy
   labels:
-    app: w-label
+    app: wgit-label
 spec:
   selector:
     matchLabels:
-      app: w-label
+      app: wgit-label
       tier: frontend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: w-label
+        app: wgit-label
         tier: frontend
     spec:
       containers:
-      - image: sadhanadockerhub0514/wp-image:82
-        name: wordpress
+      - image: wordpress
+        name: sadhanadockerhub0514/wp-image:66
         env:
         - name: WORDPRESS_DB_HOST
-          value: w-ext-svc
+          value: wgit-ext-svc
         - name: WORDPRESS_DB_USER
           valueFrom:
             secretKeyRef:
-              name: w-secret
+              name: wgit-secret
               key: username
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: w-secret
+              name: wgit-secret
               key: password
         ports:
         - containerPort: 80
@@ -87,4 +86,4 @@ spec:
       volumes:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
-          claimName: w-pvc
+          claimName: wgit-pvc
